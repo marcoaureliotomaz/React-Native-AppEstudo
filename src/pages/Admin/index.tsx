@@ -6,18 +6,12 @@ import { useNavigation } from "@react-navigation/native";
 
 
 export default function Admin({navigation}: {navigation: any}){
-
-    
-
-    
+ 
       const [modalVisible, setModalVisible] = useState(false);
       const [mensagem, setModalMessage] = useState("");
-      
-    
     
       const handleModalClose = () => {
         setModalVisible(false);
-        
       };
 
       const handleModalOpenDelete = () => {
@@ -34,6 +28,16 @@ export default function Admin({navigation}: {navigation: any}){
       const handleModalOpenReopen = () => {
         setModalVisible(true);
         setModalMessage("REABRIR");
+      };
+
+      const handleCreate = () => {
+        
+        navigation.navigate("Pesquisa") ;
+      };
+
+      const handleEdit = () => {
+
+        navigation.navigate("Pesquisa") ;
       };
     
 
@@ -67,26 +71,26 @@ export default function Admin({navigation}: {navigation: any}){
       </Modal>
 
       <View style={styles.loginContainer}>
-        <Button title="Nova Pesquisa" onPress={() => navigation.navigate('Login' )} />
+        <Button title="Nova Pesquisa" onPress={() => handleCreate()}/>
       </View>
 
       <View style={styles.row}>
         <Button title="Excluir" onPress={() => handleModalOpenDelete()} />
-        <Button title="Editar" />
+        <Button title="Editar" onPress={() => handleEdit()}/>
         <Text style={styles.centeredText}>Pesquisa 1</Text>
         <Button title="Encerrar"onPress={() => handleModalOpenClose()} />
       </View>
 
       <View style={styles.row}>
       <Button title="Excluir" onPress={() => handleModalOpenDelete()} />
-        <Button title="Editar" />
+      <Button title="Editar" onPress={() => handleEdit()}/>
         <Text style={styles.centeredText}>Pesquisa 2</Text>
         <Button title="Encerrar"onPress={() => handleModalOpenClose()} />
       </View>
 
       <View style={styles.row}>
       <Button title="Excluir" onPress={() => handleModalOpenDelete()} />
-        <Button title="Editar" />
+      <Button title="Editar" onPress={() => handleEdit()}/>
         <Text style={styles.centeredText}>Pesquisa 3</Text>
         <Button title="Encerrar"onPress={() => handleModalOpenClose()} />
       </View>
