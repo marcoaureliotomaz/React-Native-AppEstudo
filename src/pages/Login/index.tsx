@@ -8,9 +8,10 @@ export default function Login({navigation}: {navigation: any}){
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Lógica de login aqui...
+    
     console.log('Email:', email);
     console.log('Senha:', password);
+    navigation.navigate('Admin' ) 
   };
 
   const handleGoBack = () => {
@@ -36,13 +37,13 @@ export default function Login({navigation}: {navigation: any}){
             onChangeText={text => setPassword(text)}
           />
           <View style={styles.buttonContainer}>
-        <View style={styles.button}>
-          <Button title="Logar" onPress={handleLogin} />
-        </View>
-        <View style={styles.button}>
-          <Button title="Voltar" onPress={handleGoBack} />
-        </View>
-      </View>
+            <View style={styles.button}>
+              <Button title="Logar" onPress={handleLogin} />
+            </View>
+            <View style={styles.button}>
+              <Button title="Voltar" onPress={handleGoBack} />
+            </View>
+          </View>
         </View>
       );
     };
